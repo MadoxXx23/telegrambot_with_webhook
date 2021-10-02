@@ -1,1 +1,1 @@
-heroku buildpacks:set heroku/python
+Python 3.8.1
