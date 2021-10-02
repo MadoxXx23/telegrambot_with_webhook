@@ -1,14 +1,14 @@
 from aiogram import Bot, Dispatcher, executor, types
-from flask import Flask, request
+# from flask import Flask, request
 import os
 
-server = Flask(__name__)
+# server = Flask(__name__)
 
 
 API_TOKEN = '1014691610:AAFYMsGTMG4uQEbkrsKAiuEALyjD0XHBHcQ'
-WEBHOOK_HOST = f'https://webhookl.herokuapp.com/{API_TOKEN}'
-WEBHOOK_PATH = ''
-WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
+# WEBHOOK_HOST = f'https://webhookl.herokuapp.com/{API_TOKEN}'
+# WEBHOOK_PATH = ''
+# WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 
 # webserver settings
 # WEBAPP_HOST = 'localhost'  # or ip
@@ -18,17 +18,17 @@ WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
-@server.route('/' + API_TOKEN, methods=['POST'])
-def get_message():
-    json_string = request.get_data().decode('utf-8')
-    update = types.Update.as_json(json_string)
-    dp.process_update(update)
-
-@server.route('/')
-def webhook():
-    bot.delete_webhook()
-    bot.set_webhook(url=WEBHOOK_HOST)
-    return "!", 200
+# @server.route('/' + API_TOKEN, methods=['POST'])
+# def get_message():
+#     json_string = request.get_data().decode('utf-8')
+#     update = types.Update.as_json(json_string)
+#     dp.process_update(update)
+#
+# @server.route('/')
+# def webhook():
+#     bot.delete_webhook()
+#     bot.set_webhook(url=WEBHOOK_HOST)
+#     return "!", 200
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
@@ -51,16 +51,16 @@ async def send_welcome(message: types.Message):
 
 @dp.message_handler(commands=['Adidas'])
 async def send_adidas(message: types.Message):
-    with open('../picture/adidas.webp', 'rb') as picture:
+    with open('./picture/adidas.webp', 'rb') as picture:
         await bot.send_photo(message.chat.id, picture)
-    with open('../picture/adidas(cade128).png', 'rb') as picture:
+    with open('./picture/adidas(cade128).png', 'rb') as picture:
         await bot.send_photo(message.chat.id, picture)
 
 @dp.message_handler(commands=['Reebok'])
 async def send_adidas(message: types.Message):
-    with open('../picture/reebok.webp', 'rb') as picture:
+    with open('./picture/reebok.webp', 'rb') as picture:
         await bot.send_photo(message.chat.id, picture)
-    with open('../picture/reebok(cade128).png', 'rb') as picture:
+    with open('./picture/reebok(cade128).png', 'rb') as picture:
         await bot.send_photo(message.chat.id, picture)
 
 @dp.message_handler(commands=['help'])
@@ -71,16 +71,16 @@ async def send_adidas(message: types.Message):
 async def echo(message: types.Message):
     await message.answer('Не понял команды')
 
-
-async def on_startup(dp):
-    await bot.set_webhook(WEBHOOK_URL)
-
-    # insert code here to run it after start
-
-
-async def on_shutdown(dp):
-    # insert code here to run it before shutdown
-    pass
+#
+# async def on_startup(dp):
+#     await bot.set_webhook(WEBHOOK_URL)
+#
+#     # insert code here to run it after start
+#
+#
+# async def on_shutdown(dp):
+#     # insert code here to run it before shutdown
+#     pass
 
 if __name__ == '__main__':
     # server.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
