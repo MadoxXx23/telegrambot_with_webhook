@@ -9,7 +9,8 @@
       <change afterPath="$PROJECT_DIR$/picture/reebok(cade128).png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/picture/reebok.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requrements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requrements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +83,7 @@
       <workItem from="1632940180787" duration="92000" />
       <workItem from="1632946484071" duration="10436000" />
       <workItem from="1633035709961" duration="92000" />
-      <workItem from="1633172010157" duration="9039000" />
+      <workItem from="1633172010157" duration="9187000" />
     </task>
     <task id="LOCAL-00001" summary="dcdscsdcsd">
       <created>1633180793012</created>
