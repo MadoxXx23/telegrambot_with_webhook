@@ -7,7 +7,6 @@ import os
 server = Flask(__name__)
 storage = MemoryStorage()
 API_TOKEN = os.environ['API_TOKEN']
-
 WEBHOOK_HOST = f'195.2.73.23/{API_TOKEN}'
 WEBHOOK_PATH = '/home'
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
@@ -15,7 +14,6 @@ WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 # webserver settings
 WEBAPP_HOST = '195.2.73.23'  # or ip
 WEBAPP_PORT = 3001
-
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot, storage=storage)
